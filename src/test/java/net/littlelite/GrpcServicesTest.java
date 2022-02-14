@@ -22,12 +22,28 @@ public class GrpcServicesTest
     @GrpcClient
     Md5Grpc md5Grpc;
 
+    @GrpcClient
+    HypotenuseGrpc hypotenuseGrpc;
+
+    private static final Duration TIMEOUT = Duration.ofSeconds(2);
+
     @Test
     public void testMd5gRpc()
     {
         var request = Md5Request.newBuilder().setStringToHash("Alessio").build();
-        var reply = this.md5Grpc.md5Service(request).await().atMost(Duration.ofSeconds(5));
+        var reply = this.md5Grpc.md5Service(request).await().atMost(TIMEOUT);
         assertEquals("3ukn4ozDlWewQRfYHToEww==", reply.getHashCode());
+    }
+
+    @Test
+    public void testHypotenuseRpc()
+    {
+        var request = TriangleRequest.newBuilder()
+                .setLeg1(12.2)
+                .setLeg2(4.56)
+                .build();
+        var reply = this.hypotenuseGrpc.hypotenuseService(request).await().atMost(TIMEOUT);
+        assertEquals(13.024346432738955, reply.getHypotenuse());
     }
 
 }

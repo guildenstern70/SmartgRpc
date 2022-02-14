@@ -7,10 +7,10 @@ option java_outer_classname = "HypotenusegRpcProto";
 package smartgrpcproto;
 
 service HypotenuseGrpc {
-  rpc HypotenuseService (HypotenuseRequest) returns (HypotenuseReply) {}
+  rpc HypotenuseService (TriangleRequest) returns (HypotenuseReply) {}
 }
 
-message HypotenuseRequest {
+message TriangleRequest {
   double leg1 = 1;
   double leg2 = 2;
 }
