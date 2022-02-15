@@ -1,7 +1,7 @@
 # Smart gRPC Project
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
+![Actions CI](https://github.com/guildenstern70/SmartgRpc/actions/workflows/gradle.yml/badge.svg)
 
 This project implements two simple services using gRPC protocol.
 
