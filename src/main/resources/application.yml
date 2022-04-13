@@ -1,0 +1,5 @@
+quarkus:
+  banner:
+    path: banner.txt
+smartgrpc:
+  version: 0.0.1

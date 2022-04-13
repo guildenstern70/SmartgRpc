@@ -15,7 +15,7 @@ dependencies {
     implementation 'io.quarkus:quarkus-resteasy-reactive-qute'
     implementation 'io.quarkus:quarkus-arc'
     implementation 'io.quarkus:quarkus-config-yaml'
-    implementation 'org.jetbrains:annotations:20.1.0'
+    implementation 'org.jetbrains:annotations:23.0.0'
     testImplementation 'io.quarkus:quarkus-junit5'
     testImplementation 'org.assertj:assertj-core:3.22.0'
     testImplementation 'io.rest-assured:rest-assured'

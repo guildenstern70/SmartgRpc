@@ -16,6 +16,8 @@ import net.littlelite.Md5Grpc;
 import net.littlelite.Md5Reply;
 import net.littlelite.Md5Request;
 import net.littlelite.service.Md5Service;
+import org.jboss.logging.Logger;
+import org.jetbrains.annotations.NotNull;
 
 import javax.inject.Inject;
 
@@ -23,12 +25,18 @@ import javax.inject.Inject;
 public class Md5GrpcService implements Md5Grpc
 {
     @Inject
+    Logger log;
+
+    @Inject
     Md5Service md5Service;
 
     @Override
-    public Uni<Md5Reply> md5Service(Md5Request request)
+    public Uni<Md5Reply> md5Service(@NotNull Md5Request request)
     {
+        log.info("Called gRPC Md5Service");
+        log.info("Md5Request = " + request.getStringToHash());
         var hash = this.md5Service.generateMd5(request.getStringToHash());
+        log.info("Md5Respons = " + hash);
         return Uni.createFrom().item(request.getStringToHash())
                 .map(msg -> Md5Reply.newBuilder().setHashCode(hash).build());
     }
