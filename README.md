@@ -11,6 +11,10 @@ Run developer version with
 
     gradle quarkusDev
 
+### HTML Documentation
+
+gRPC services has been documented in HTML using https://github.com/pseudomuto/protoc-gen-doc
+
 ### First service
 
 It returns the MD5 digest of a given string.
