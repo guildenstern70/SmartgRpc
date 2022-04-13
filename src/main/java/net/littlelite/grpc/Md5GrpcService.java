@@ -33,10 +33,10 @@ public class Md5GrpcService implements Md5Grpc
     @Override
     public Uni<Md5Reply> md5Service(@NotNull Md5Request request)
     {
-        log.info("Called gRPC Md5Service");
-        log.info("Md5Request = " + request.getStringToHash());
+        log.info("Received request for gRPC Md5Service");
+        log.info("Md5Request  = " + request.getStringToHash());
         var hash = this.md5Service.generateMd5(request.getStringToHash());
-        log.info("Md5Respons = " + hash);
+        log.info("Md5Response = " + hash);
         return Uni.createFrom().item(request.getStringToHash())
                 .map(msg -> Md5Reply.newBuilder().setHashCode(hash).build());
     }

@@ -56,3 +56,10 @@ message HypotenuseReply {
   double hypotenuse = 1;
 }
 ```
+
+
+### Sample Client
+
+For a sample client implementation in Go, see:
+
+
