@@ -61,5 +61,8 @@ message HypotenuseReply {
 ### Sample Client
 
 For a sample client implementation in Go, see:
+https://github.com/guildenstern70/SmartgRpcClient
+
+
 
 
