@@ -25,7 +25,7 @@ group 'net.littlelite'
 
 java {
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(19))
+        languageVersion.set(JavaLanguageVersion.of(17))
     }
 }
 
@@ -37,3 +37,8 @@ compileJava {
 compileTestJava {
     options.encoding = 'UTF-8'
 }
+
+test {
+    systemProperty "java.util.logging.manager", "org.jboss.logmanager.LogManager"
+}
+
