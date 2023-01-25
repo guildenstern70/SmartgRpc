@@ -74,6 +74,26 @@ You may also want to download 'jq' to format the output https://stedolan.github.
     grpcurl -plaintext -d '{"stringToHash": "Hello World!"}' 0.0.0.0:9000 smartgrpcproto.Md5Grpc/Md5Service
     grpcurl -plaintext -d '{"leg1": 3, "leg2": 4}' 0.0.0.0:9000 smartgrpcproto.HypotenuseGrpc/HypotenuseService
 
+### Docker
+
+Build image with:
+
+    gradle clean build
+    docker build -f src/main/docker/Dockerfile.jvm -t littlelite/smartgrpc .
+
+If you prefer the native docker image, build it with:
+
+    gradlew build -Dquarkus.package.type=native
+    docker build -f src/main/docker/Dockerfile.native -t littlelite/smartgrpc-native .
+
+Run built image with:
+
+    docker run -i --rm -p 8080:8080 -p 9000:9000 littlelite/smartgrpc[-native]
+
+
+
+
+
 
 
 
