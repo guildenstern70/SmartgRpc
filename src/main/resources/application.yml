@@ -1,5 +1,11 @@
 quarkus:
   banner:
     path: banner.txt
+  grpc:
+    server:
+      enable-reflection-service: true
 smartgrpc:
   version: 0.0.1
+
+
+

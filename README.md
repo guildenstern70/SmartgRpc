@@ -63,6 +63,21 @@ message HypotenuseReply {
 For a sample client implementation in Go, see:
 https://github.com/guildenstern70/SmartgRpcClient
 
+### Testing with grpcurl
+
+You can download 'grpcurl' to make easy testing from https://github.com/fullstorydev/grpcurl
+You may also want to download 'jq' to format the output https://stedolan.github.io/jq/
+
+    grpcurl -plaintext 0.0.0.0:9000 list
+    grpcurl -plaintext 0.0.0.0:9000 describe smartgrpcproto.Md5Grpc
+    grpcurl -plaintext 0.0.0.0:9000 describe smartgrpcproto.HypotenuseGrpc
+    grpcurl -plaintext -d '{"stringToHash": "Hello World!"}' 0.0.0.0:9000 smartgrpcproto.Md5Grpc/Md5Service
+    grpcurl -plaintext -d '{"leg1": 3, "leg2": 4}' 0.0.0.0:9000 smartgrpcproto.HypotenuseGrpc/HypotenuseService
+
+
+
+
+
 
 
 
