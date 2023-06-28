@@ -18,7 +18,7 @@ import net.littlelite.service.TriangleService;
 import org.jboss.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 
 @GrpcService
 public class HypotenuseService implements HypotenuseGrpc

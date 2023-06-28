@@ -12,6 +12,7 @@ package net.littlelite.grpc;
 import io.quarkus.grpc.GrpcService;
 
 import io.smallrye.mutiny.Uni;
+import jakarta.inject.Inject;
 import net.littlelite.Md5Grpc;
 import net.littlelite.Md5Reply;
 import net.littlelite.Md5Request;
@@ -19,7 +20,6 @@ import net.littlelite.service.Md5Service;
 import org.jboss.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 
-import javax.inject.Inject;
 
 @GrpcService
 public class Md5GrpcService implements Md5Grpc

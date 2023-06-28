@@ -9,9 +9,9 @@
 
 package net.littlelite.service;
 
+import jakarta.enterprise.context.ApplicationScoped;
 import org.jetbrains.annotations.NotNull;
 
-import javax.enterprise.context.ApplicationScoped;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Base64;

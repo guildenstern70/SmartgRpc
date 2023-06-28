@@ -13,7 +13,7 @@ import io.quarkus.test.junit.QuarkusTest;
 import net.littlelite.service.Md5Service;
 import net.littlelite.service.TriangleService;
 import org.junit.jupiter.api.Test;
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
