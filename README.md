@@ -74,21 +74,38 @@ You may also want to download 'jq' to format the output https://stedolan.github.
     grpcurl -plaintext -d '{"stringToHash": "Hello World!"}' 0.0.0.0:8080 smartgrpcproto.Md5Grpc/Md5Service
     grpcurl -plaintext -d '{"leg1": 3, "leg2": 4}' 0.0.0.0:8080 smartgrpcproto.HypotenuseGrpc/HypotenuseService
 
-### Docker
+### Docker (JVM Image)
 
 Build image with:
 
     gradle clean build
     docker build -f src/main/docker/Dockerfile.jvm -t littlelite/smartgrpc .
 
-If you prefer the native docker image, build it with:
+Run built image with:
 
-    gradlew build -Dquarkus.package.type=native
+    docker run -i --rm -p 8080:8080 littlelite/smartgrpc
+
+
+### Docker (Native Image)
+
+If you prefer the native docker image, be sure to build code using Graal JVM. To do so,
+check the 'gradle.properties' file and adjust 'org.gradle.java.home' to a Graal JVM 17.
+
+Then run:
+
+    ./gradlew build -Dquarkus.package.type=native
+
+If you build the native image on a Mac, you may want to use the following command:
+
+    ./gradlew build -Dquarkus.package.type=native -Dquarkus.native.container-build=true
+
+Then build the docker image with:
+
     docker build -f src/main/docker/Dockerfile.native -t littlelite/smartgrpc-native .
 
 Run built image with:
 
-    docker run -i --rm -p 8080:8080 -p 9000:9000 littlelite/smartgrpc[-native]
+    docker run -i --rm -p 8080:8080 littlelite/smartgrpc-native
 
 
 
