@@ -3,7 +3,7 @@
 #
 #
 # Project SmartgRpc
-# Copyright (C) 2022 Alessio Saltarin
+# Copyright (C) 2022-23 Alessio Saltarin
 #
 # This software is licensed under MIT License (see LICENSE)
 #
