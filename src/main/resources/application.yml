@@ -4,9 +4,9 @@ quarkus:
   grpc:
     server:
       enable-reflection-service: true
-      use-separate-server: true
+      use-separate-server: false
 smartgrpc:
-  version: 0.0.1
+  version: 0.0.2
 
 
 
